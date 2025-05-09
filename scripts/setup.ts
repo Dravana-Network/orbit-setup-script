@@ -88,10 +88,10 @@ async function main() {
     /// Funding batch-poster and staker address ///
     //////////////////////////////////////////////
     if (!rs.etherSent.batchPoster) {
-      console.log('Funding batch-poster accounts on parent chain with 0.3 ETH')
+      console.log('Funding batch-poster accounts on parent chain with 0.0003 ETH')
       const tx1 = await signer.sendTransaction({
         to: config.batchPoster,
-        value: ethers.utils.parseEther('0.3'),
+        value: ethers.utils.parseEther('0.0003'),
       })
       console.log(`Transaction hash on parent chain: ${tx1.hash}`)
       const receipt1 = await tx1.wait()
@@ -102,10 +102,10 @@ async function main() {
     }
 
     if (!rs.etherSent.staker) {
-      console.log('Funding staker accounts on parent chain with 0.3 ETH')
+      console.log('Funding staker accounts on parent chain with 0.0003 ETH')
       const tx2 = await signer.sendTransaction({
         to: config.staker,
-        value: ethers.utils.parseEther('0.3'),
+        value: ethers.utils.parseEther('0.0003'),
       })
       console.log(`Transaction hash on parent chain: ${tx2.hash}`)
       const receipt2 = await tx2.wait()
@@ -157,7 +157,7 @@ async function main() {
       console.log(
         'Running tokenBridgeDeployment or erc20TokenBridge script to deploy token bridge contracts on parent chain and your Orbit chain 🌉🌉🌉🌉🌉'
       )
-      await createERC20Bridge(L2_RPC_URL, privateKey, L3_RPC_URL, config.rollup)
+      //await createERC20Bridge(L2_RPC_URL, privateKey, L3_RPC_URL, config.rollup)
       rs.tokenBridgeDeployed = true
     }
     ////////////////////////////////
