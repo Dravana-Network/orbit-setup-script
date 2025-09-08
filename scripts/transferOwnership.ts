@@ -27,11 +27,11 @@ export async function transferOwner(
   const l2ChainId = (await l2Provider.getNetwork()).chainId
 
   let TOKEN_BRIDGE_CREATOR
-  if (l2ChainId === 8453) {
+  if (l2ChainId === 421614) {
     TOKEN_BRIDGE_CREATOR = TOKEN_BRIDGE_CREATOR_BASE
   } else {
     throw new Error(
-      'The Base Chain you have provided is not supported, please put RPC for Arb Nova'
+      'The Base Chain you have provided is not supported, please put RPC for Arb Sepolia'
     )
   }
 

@@ -8,8 +8,8 @@ services:
       - 'host.docker.internal:host-gateway'
     volumes:
       - "../proxy:/etc/nginx/templates"
-      - "../certbot/conf/live/chain.x0pay.com:/etc/nginx/ssl/live/chain.x0pay.com:ro"
-      - "../certbot/conf:/etc/nginx/ssl:ro"
+      - "/etc/letsencrypt/live/testnet.langitchain.xyz:/etc/nginx/ssl/live/testnet.langitchain.xyz:ro"
+      - "/etc/letsencrypt:/etc/nginx/ssl:ro"
     environment:
       BACK_PROXY_PASS: ${BACK_PROXY_PASS:-http://backend:4000}
       FRONT_PROXY_PASS: ${FRONT_PROXY_PASS:-http://frontend:3000}
